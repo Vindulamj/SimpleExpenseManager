@@ -7,10 +7,12 @@ import android.provider.BaseColumns;
  */
 public class Database {
 
+    //This class elaborates the structure of the database of the application
     public Database(){}
 
-    public static final String DB_NAME = "130247P";
+    public static final String DB_NAME = "130247P";   //database name
 
+    //Table Account structure
     public static abstract class Table_Account implements BaseColumns{
         public static final String user_id ="id";
         public static final String bank ="bank";
@@ -19,6 +21,8 @@ public class Database {
         public static final String account_info ="Account";
 
     }
+
+    //Table Transaction structure
     public static abstract class Table_Transaction implements BaseColumns{
         public static final String id ="trans_id";
         public static final String user_id ="id";
