@@ -34,7 +34,7 @@ public class OutMemoryTransactionDAO implements TransactionDAO {
     public void logTransaction(Date date, String accountNo, ExpenseType expenseType, double amount) {
         SQLiteDatabase SQ = DBManager.getWritableDatabase();
         ContentValues Con_values = new ContentValues();
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Con_values.put(Database.Table_Transaction.user_id,accountNo);
         Con_values.put(Database.Table_Transaction.date,df.format(date));
         Con_values.put(Database.Table_Transaction.type,expenseType.toString());
