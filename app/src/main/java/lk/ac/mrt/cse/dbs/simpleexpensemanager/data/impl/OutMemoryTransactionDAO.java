@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -76,11 +75,8 @@ public class OutMemoryTransactionDAO implements TransactionDAO {
                 DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
                 try {
                     date = df.parse(date_string);
-                    Log.d("Database operation",date_string);
                 } catch (ParseException e) {
                     e.printStackTrace();
-                    Log.d("Database operation","Come4");
-                    Log.d("Database operation",date_string);
                 }
                 ExpenseType expenseType =   ExpenseType.valueOf(cursor.getString(cursor.getColumnIndex(Database.Table_Transaction.type)));
                 double amount=cursor.getDouble(cursor.getColumnIndex(Database.Table_Transaction.amount));
